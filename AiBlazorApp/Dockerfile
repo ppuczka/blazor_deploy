@@ -10,10 +10,10 @@ COPY ["AiBlazorApp/AiBlazorApp.csproj", "."]
 RUN dotnet restore "AiBlazorApp.csproj"
 COPY . .
 
-RUN dotnet build "AiBlazorApp.csproj" -c Release -o /app/build
+RUN dotnet build "AiBlazorApp/AiBlazorApp.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "AiBlazorApp.csproj" -c Release -o /app/publish
+RUN dotnet publish "AiBlazorApp/AiBlazorApp.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
