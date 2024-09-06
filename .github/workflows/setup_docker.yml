@@ -30,4 +30,6 @@ jobs:
           file: ./AiBlazorApp/Dockerfile
           tags: |
             user/app:latest
+          secrets: |
+            GIT_AUTH_TOKEN=${{ secrets.AZ_CONTAINER_REGISTRY_TOKEN }}
           
