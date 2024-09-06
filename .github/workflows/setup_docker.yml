@@ -2,13 +2,15 @@ name: ci
 
 on:
   push:
+     tags: ["v*.*.*"]
+
+env:
+  IMAGE_NAME: blazor-ai
 
 jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      # - uses: actions/checkout@v4
-
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       
@@ -29,7 +31,5 @@ jobs:
           push: true
           file: ./AiBlazorApp/Dockerfile
           tags: |
-            user/app:latest
-          # secrets: |
-          #   GIT_AUTH_TOKEN=${{ secrets.AZ_CONTAINER_REGISTRY_TOKEN }}
-          
+            prpucontainerregistry.azurecr.io/${{ env.IMAGE_NAME }}:${{ steps.tag.outputs.tag }}
+         
