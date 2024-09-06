@@ -32,5 +32,4 @@ jobs:
           file: ./AiBlazorApp/Dockerfile
           tags: |
             prpucontainerregistry.azurecr.io/${{ env.IMAGE_NAME }}:latest
-            # ${{ steps.tag.outputs.tag }}
          
