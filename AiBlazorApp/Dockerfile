@@ -7,7 +7,7 @@ EXPOSE 5282
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 COPY ["AiBlazorApp/AiBlazorApp.csproj", "."]
-RUN dotnet restore "AiBlazorApp.csproj"
+RUN dotnet restore "AiBlazorApp/AiBlazorApp.csproj"
 COPY . .
 
 RUN dotnet build "AiBlazorApp/AiBlazorApp.csproj" -c Release -o /app/build
