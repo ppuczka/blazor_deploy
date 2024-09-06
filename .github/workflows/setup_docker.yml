@@ -31,5 +31,6 @@ jobs:
           push: true
           file: ./AiBlazorApp/Dockerfile
           tags: |
-            prpucontainerregistry.azurecr.io/${{ env.IMAGE_NAME }}:${{ steps.tag.outputs.tag }}
+            prpucontainerregistry.azurecr.io/${{ env.IMAGE_NAME }}:latest
+            # ${{ steps.tag.outputs.tag }}
          
