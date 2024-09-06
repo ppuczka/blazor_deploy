@@ -27,6 +27,7 @@ jobs:
         with:
           platforms: linux/amd64,linux/arm64
           push: true
+          context: .
           file: '{context}/AiBlazorApp/Dockerfile'
           tags: |
             user/app:latest
