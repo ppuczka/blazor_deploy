@@ -31,7 +31,7 @@ jobs:
           push: true
           file: ./AiBlazorApp/Dockerfile
           tags: |
-            prpucontainerregistry.azurecr.io/${{ env.IMAGE_NAME }}:latest
+            prpucontainerregistry.azurecr.io/${{ env.IMAGE_NAME }}:${{ github.head_ref }}.${{ github.sha }}
          
       # - name: 'Login via Azure CLI'
       #   uses: azure/login@v1
